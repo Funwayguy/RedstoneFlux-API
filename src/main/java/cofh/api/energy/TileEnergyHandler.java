@@ -12,6 +12,7 @@ import net.minecraft.util.EnumFacing;
  * @author King Lemming
  *
  */
+@Deprecated
 public class TileEnergyHandler extends TileEntity implements IEnergyReceiver, IEnergyProvider {
 
 	protected EnergyStorage storage = new EnergyStorage(32000);
@@ -24,10 +25,11 @@ public class TileEnergyHandler extends TileEntity implements IEnergyReceiver, IE
 	}
 
 	@Override
-	public void writeToNBT(NBTTagCompound nbt) {
+	public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
 
 		super.writeToNBT(nbt);
 		storage.writeToNBT(nbt);
+		return nbt;
 	}
 
 	/* IEnergyConnection */

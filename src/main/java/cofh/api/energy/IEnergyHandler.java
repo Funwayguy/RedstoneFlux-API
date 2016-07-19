@@ -12,6 +12,7 @@ import net.minecraft.util.EnumFacing;
  * @author King Lemming
  *
  */
+@Deprecated
 public interface IEnergyHandler extends IEnergyConnection {
 
 	/**
