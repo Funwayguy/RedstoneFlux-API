@@ -8,6 +8,7 @@ import cofh.api.energy.capability.EnergyStorage;
 
 public class ItemEnergyHandler extends Item
 {
+	private int initCharge;
 	private int capacity;
 	private int speed;
 	private boolean canFill = true;
@@ -16,6 +17,12 @@ public class ItemEnergyHandler extends Item
 	public ItemEnergyHandler(int capacity)
 	{
 		this.capacity = capacity;
+	}
+	
+	public ItemEnergyHandler setInitCharge(int charge)
+	{
+		this.initCharge = charge;
+		return this;
 	}
 	
 	public ItemEnergyHandler setTransferRate(int speed)
@@ -39,6 +46,6 @@ public class ItemEnergyHandler extends Item
 	@Override
     public ICapabilityProvider initCapabilities(ItemStack stack, NBTTagCompound nbt)
     {
-    	return new EnergyHandlerItemStack(stack, new EnergyStorage(capacity, 0, speed, canFill, canDrain));
+    	return new EnergyHandlerItemStack(stack, new EnergyStorage(capacity, initCharge, speed, canFill, canDrain));
     }
 }
