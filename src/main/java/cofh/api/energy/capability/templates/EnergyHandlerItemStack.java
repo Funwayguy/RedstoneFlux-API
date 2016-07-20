@@ -33,11 +33,12 @@ public class EnergyHandlerItemStack implements ICapabilityProvider, IEnergyHandl
 	}
 	
 	@Override
+	@SuppressWarnings("unchecked")
 	public <T> T getCapability(Capability<T> capability, EnumFacing facing)
 	{
 		if(capability == CapabilityEnergyHandler.ENERGY_HANDLER_CAPABILITY)
 		{
-			return CapabilityEnergyHandler.ENERGY_HANDLER_CAPABILITY.cast(storage);
+			return (T)storage;
 		}
 		
 		return null;

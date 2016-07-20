@@ -1,13 +1,13 @@
 package cofh.api.energy.capability;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.world.World;
 import cofh.api.energy.IEnergyContainerItem;
 import cofh.api.energy.capability.wrappers.ItemEnergyHandlerWrapper;
 import cofh.api.energy.capability.wrappers.TileEnergyHandlerWrapper;
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
 @SuppressWarnings("deprecation")
 public class EnergyUtil

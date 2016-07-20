@@ -12,11 +12,10 @@ public class TileEnergyHandler extends TileEntity
 	EnergyStorage storage = new EnergyStorage(32000);
 	
 	@Override
-	public NBTTagCompound writeToNBT(NBTTagCompound tag)
+	public void writeToNBT(NBTTagCompound tag)
 	{
 		super.writeToNBT(tag);
 		storage.writeToNBT(tag);
-		return tag;
 	}
 	
 	@Override
@@ -38,11 +37,12 @@ public class TileEnergyHandler extends TileEntity
     }
     
 	@Override
+	@SuppressWarnings("unchecked")
     public <T> T getCapability(Capability<T> capability, EnumFacing facing)
     {
 		if(capability == CapabilityEnergyHandler.ENERGY_HANDLER_CAPABILITY)
 		{
-			return CapabilityEnergyHandler.ENERGY_HANDLER_CAPABILITY.cast(storage);
+			return (T)storage;
 		}
 		
         return super.getCapability(capability, facing);
